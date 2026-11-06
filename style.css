@@ -1,0 +1,320 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b0b12;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+
+header {
+    background-color: #10101a;
+    padding: 25px 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo::after {
+    content: "";
+    color: #8b5cf6;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul a:hover {
+    color: #8b5cf6;
+}
+
+/* SECCIÓN PRINCIPAL */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(11, 11, 18, 0.45),
+            rgba(11, 11, 18, 0.75)
+        ),
+        url("images/fondo-cyberpunk.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero p:first-child {
+    color: #a78bfa;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 65px);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 35px;
+    color: #8b5cf6;
+}
+
+.hero p {
+    color: #aaaaaa;
+    max-width: 550px;
+    line-height: 1.7;
+    margin: 20px 0 30px;
+}
+
+/* BOTÓN */
+
+.boton {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #7040d8;
+    transform: translateY(-3px);
+}
+
+/* OTRAS SECCIONES */
+
+section:not(.hero) {
+    padding: 80px 10%;
+    line-height: 1.8;
+}
+
+section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+section p {
+    color: #aaaaaa;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background-color: #10101a;
+    text-align: center;
+    padding: 25px;
+    color: #777777;
+}
+
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* SECCIÓN DE PROYECTOS */
+
+.projects {
+    background-color: #0e0e17;
+}
+
+.section-header {
+    margin-bottom: 45px;
+}
+
+.section-tag {
+    color: #a78bfa !important;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    margin-top: 8px;
+}
+
+.section-header > p:last-child {
+    color: #999999;
+}
+
+/* DISTRIBUCIÓN DE TARJETAS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #151521;
+    border: 1px solid #252536;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #8b5cf6;
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.15);
+}
+
+/* IMÁGENES DE PROYECTOS */
+
+.project-image {
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #25204a, #10101a);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image span {
+    font-size: 65px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.12);
+}
+
+.future-project {
+    background: linear-gradient(135deg, #20202c, #11111a);
+}
+
+/* INFORMACIÓN DEL PROYECTO */
+
+.project-info {
+    padding: 28px;
+}
+
+.project-status {
+    color: #a78bfa;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.project-info h3 {
+    margin: 14px 0;
+    font-size: 23px;
+}
+
+.project-info p {
+    line-height: 1.8;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* TECNOLOGÍAS */
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.project-tech span {
+    background-color: #242037;
+    color: #c4b5fd;
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid #383052;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+
+    .section-header h2 {
+        font-size: 30px;
+    }
+}
+
+/* ENLACES DE CONTACTO */
+
+#contacto a,
+#contacto a:link,
+#contacto a:visited {
+    color: #a78bfa !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+#contacto a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
